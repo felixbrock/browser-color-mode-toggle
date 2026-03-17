@@ -3,23 +3,12 @@
   "name": "Browser Color Mode Toggle",
   "description": "Toggle a light or dark rendering mode for all open tabs in Chromium browsers.",
   "version": "1.0.0",
-  "permissions": [
-    "scripting",
-    "storage",
-    "tabs"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "permissions": ["scripting", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-        "content.js"
-      ],
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
       "run_at": "document_start"
     }
   ],
@@ -32,8 +21,8 @@
   "commands": {
     "toggle-color-scheme": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
+        "default": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z"
       },
       "description": "Toggle the browser color scheme for all open tabs"
     }
