@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Color Mode Toggle",
+  "description": "Toggle a light or dark rendering mode for all open tabs in Chromium browsers.",
+  "version": "1.0.0",
+  "permissions": [
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Toggle color scheme"
+  },
+  "commands": {
+    "toggle-color-scheme": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Toggle the browser color scheme for all open tabs"
+    }
+  }
+}
