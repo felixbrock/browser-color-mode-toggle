@@ -188,26 +188,6 @@ chrome.commands.onCommand.addListener(async (command) => {
   }
 });
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  log("runtime.onMessage fired", {
-    message,
-    url: sender.tab?.url
-  });
-
-  if (message?.type !== "toggle-color-scheme-shortcut") {
-    return false;
-  }
-
-  handleToggleRequest(message.source || "message")
-    .then(() => sendResponse({ ok: true }))
-    .catch((error) => {
-      console.error("Failed to handle toggle request:", error);
-      sendResponse({ ok: false, error: error?.message || String(error) });
-    });
-
-  return true;
-});
-
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   log("tabs.onUpdated fired", {
     tabId,

@@ -6,8 +6,7 @@ An unpacked Chromium extension that toggles a darkened or normal rendering mode 
 
 - Toggles every currently open `http` and `https` tab between normal and darkened mode
 - Re-applies the active mode when a page finishes loading
-- Exposes a keyboard shortcut: `Ctrl+Shift+Y`
-- Captures the shortcut both through Chromium extension commands and a page-level fallback listener
+- Exposes a keyboard shortcut: `Ctrl+Shift+Z`
 - Works in Chromium-based browsers such as Chrome and Brave
 
 ## Install
@@ -19,7 +18,7 @@ An unpacked Chromium extension that toggles a darkened or normal rendering mode 
 5. Open the extension shortcuts page if needed:
    - Chrome: `chrome://extensions/shortcuts`
    - Brave: `brave://extensions/shortcuts`
-6. Confirm that `Toggle color scheme` is bound to `Ctrl+Shift+Y`.
+6. Confirm that `Toggle color scheme` is bound to `Ctrl+Shift+Z`.
 
 ## Notes
 
